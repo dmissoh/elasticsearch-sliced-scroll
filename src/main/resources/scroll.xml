@@ -1,0 +1,15 @@
+<properties>
+  <property name="scrollSliceQuery">
+    <![CDATA[
+         {
+           "slice": {
+                "id": #[sliceId],
+                "max": #[sliceMax]
+            },
+            "size":#[size],
+            "_source": ["dcs_cp_id", "latitude", "longitude", "dcs_pool_id"],
+            "query":{"bool":{"must":{"match_all":{}},"filter":{"geo_distance":{"distance":"300km","location":{"lat":52.377498,"lon":4.86902}}}}}}
+        }
+        ]]>
+  </property>
+</properties>
